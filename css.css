@@ -4,7 +4,33 @@
     box-sizing: border-box
 }
 header {
+    position: fixed;
     background-color: black;
     height: 10vh;
     border-bottom: 5px solid #87d9ff;
+}
+header div.topnavbar{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 50% 50%; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "logo snowstorm snowstorm snowstorm . . . shopid shopid"
+      ". navbar navbar navbar navbar navbar navbar research research"; 
+}
+header a.logo { grid-area: logo; height: 100%; }
+.research { grid-area: research; }
+.snowstorm { grid-area: snowstorm; }
+.shopid { grid-area: shopid; }
+
+div.navbar {
+    grid-area: navbar;
+    display: flex;
+}
+div.navbar p {
+    font-family: 'bebas neue';
+    color: #f5eded;
+    font-size: 100%;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
 }
