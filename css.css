@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Open Sans';
 }
 a:-webkit-any-link {
     color: #f5eded;
@@ -89,4 +90,32 @@ div.navbar p {
 }
 div.navbar p:hover {
     color: #87d9ff;
+}
+
+
+
+div.pagemain {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 1230px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+}
+h1.pagetitle {
+    margin: 90px auto;
+}
+div.keyboard-target-color {
+    display: flex;
+}
+div.keyboard-target-color div.keyB-target {
+    display: flex;
+    flex-direction: column;
+}
+div.keyboard-target-color div.keyB-target {
+    display: flex;
+    flex-direction: column;
 }
