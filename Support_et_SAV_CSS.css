@@ -81,9 +81,26 @@ form .pied-formulaire button {
 form .pied-formulaire button:hover {
   transform: scale(1.05);
 }
+input:focus-visible{
+  outline: 0px;
+}
+input:required, textarea:required{
+  background: url(images/asterisk.svg) 98% center no-repeat;
+}
+input:focus:invalid, textarea:focus:invalid{
+  border-color: #ff0000 !important;
+  background-image: none;
+}
+input:focus:valid, textarea:focus:valid{
+  border-color: #05d416 !important;
+}
+input:valid, textarea:valid{
+  background-image: none;
+}
 
 @media screen and (max-width: 920px) {
   form .corps-formulaire .droite {
     margin-left: 0px;
   }
 }
+
