@@ -11,29 +11,29 @@
     <title>Sav</title>
 </head>
 <body>
-    <form>
+    <form onsubmit="sendEmail(); reset(); return false;">
         <h1>Contactez-nous</h1>
         <div class="separation"></div>
         <div class="corps-formulaire">
           <div class="gauche">
             <div class="groupe">
               <label>Votre Prénom</label>
-              <input type="text" autocomplete="off" />
+              <input type="text" id="name" autocomplete="off" required/>
               <i class="fas fa-user"></i>
             </div>
             <div class="groupe">
               <label>Votre adresse e-mail</label>
-              <input type="text" autocomplete="off" />
+              <input type="email" id="email" autocomplete="off" required placeholder="mail@domain.com"/>
               <i class="fas fa-envelope"></i>
             </div>
             <div class="groupe">
               <label>Votre téléphone</label>
-              <input type="text" autocomplete="off" />
+              <input type="text" id="phone" autocomplete="off" required placeholder="+33"/>
               <i class="fas fa-mobile"></i>
             </div>
             <div class="groupe">
                 <label>Votre pays</label>
-                <input type="text" autocomplete="off" />
+                <input type="text" id="country" autocomplete="off" required/>
                 <i class="fa-solid fa-earth-americas"></i>
             </div>
           </div>
@@ -41,14 +41,34 @@
           <div class="droite">
             <div class="groupe">
               <label>Message</label>
-              <textarea placeholder="Saisissez ici..."></textarea>
+              <textarea placeholder="Saisissez ici..." id="message" required></textarea>
             </div>
           </div>
         </div>
   
         <div class="pied-formulaire" align="center">
-          <button>Envoyer le message</button>
+          <button type="submit">Envoyer le message</button>
         </div>
       </form>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script>
+        function sendEmail(){
+          Email.send({
+            Host : "smtp.gmail.com",
+            Username : "snowstormtrouper@gmail.com",
+            Password : "chinchilla@8520",
+            To : 'snowstormtrouper@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "SAV snowstorm",
+            Body : "Nom: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("Email").value
+                + "<br> Téléphone: " + document.getElementById("phone").value
+                + "<br> Pays: " + document.getElementById("country").value
+                + "<br> Message: " + document.getElementById("message").value
+        }).then(
+          message => alert("Le message a été envoyé avec succès !")
+        );
+        }
+      </script>
 </body>
 </html>
