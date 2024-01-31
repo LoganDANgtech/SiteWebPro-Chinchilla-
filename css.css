@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Open Sans';
 }
+body{
+    background-color: #000000;
+}
 a:-webkit-any-link {
     color: #f5eded;
     text-decoration: none;
@@ -111,6 +114,8 @@ h1.pagetitle {
 div.keyboard-target-color {
     display: flex;
     width: 100%;
+    background-color: #f5eded;
+    padding: 0px 20px 20px;
 }
 div.keyboard-target-color div.keyB-target {
     display: flex;
@@ -124,7 +129,7 @@ div.keyboard-target-color div.keyB-color {
     flex: 1 1 auto;
 }
 #tgl-key-caps {
-    padding: 7px;
+    padding: 10px;
 }
 #tgl-key-text {
     padding: 7px;
@@ -150,6 +155,9 @@ div.tgl-color {
     width: 30px;
     max-width: initial;
     border: 1px solid #d5d5d5;
-    margin: 0;
-    padding: 0;
+    z-index: 1;
+}
+div.tgl-color.active,#tgl-key-caps.active,#tgl-key-text.active{
+    outline: 4px solid #000000;
+    z-index: 2;
 }
