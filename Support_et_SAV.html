@@ -12,6 +12,29 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
+  <header>
+    <div class="topnavbar">
+        <a href="(main.html)" class="logo"><img src="./images/snowflak.png" alt="logosnowstorm" class="logoimg"></a>
+        <div class="navbar"> <!--Display: none; si < 294 px-->
+            <a href=""><p>NOS&nbsp;PRODUITS</p></a>
+            <a href=""><p>PERSONNALISER</p></a>
+            <a href=""><p>GALERIE</p></a>
+            <a href=""><p>SUPPORT/SAV</p></a>
+            <a href=""><p>FAQ</p></a>
+            <a href=""><p>CONTACT</p></a>
+        </div>
+        <div class="snowstorm">
+            <img src="images/SNOWSTORM.GG.png" height="80%">
+        </div>
+        <div class="research">
+            <form action="/fr/search" role="search">
+                <input type="search" placeholder="Recherche"/>
+                <button type="submit"><img src="./images/search.cebfd63a204ba9fefa74.svg" height="10px"></button>
+            </form>
+        </div>
+    </div>
+  </header>
+  <div class="pagemain">
     <form onsubmit="sendEmail(); reset(); return false;">
         <h1>Contactez-nous</h1>
         <div class="separation"></div>
@@ -73,5 +96,6 @@
             });
     }
       </script>
+    </div>
 </body>
 </html>

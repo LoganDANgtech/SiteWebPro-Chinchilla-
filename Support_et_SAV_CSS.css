@@ -1,20 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-body {
-  margin: 0px;
-  padding: 0px;
-  background-color: #000000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-}
 
-form {
+div.pagemain form {
+  margin-top: 100px;
   padding: 30px;
-  background-color: #094fAC;
+  background-color: #5684C1;
   border-radius: 10px;
 }
 form h1 {
@@ -97,6 +87,164 @@ input:focus:valid, textarea:focus:valid{
 }
 input:valid, textarea:valid{
   background-image: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+}
+a:-webkit-any-link {
+  color: #f5eded;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  height: 70px;
+  width: max-content;
+  border-bottom: 3px solid #87d9ff;
+}
+header div.topnavbar{
+  width: 100vw;
+  height: 100%;
+  display: grid; 
+  grid-template-columns: 45px 11% 11% 11% 11% 11% 11% 11% 13%; 
+  grid-template-rows: 50% 50%; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "logo snowstorm snowstorm snowstorm . . . shopid shopid"
+    "logo navbar navbar navbar navbar navbar navbar research research"; 
+}
+header a.logo { 
+  grid-area: logo; 
+  display: flex;
+  max-height: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.logoimg{
+  height: 40px;
+}
+.research { 
+  grid-area: research; 
+}
+div.research form {
+  display: flex;
+}
+div.research input {
+  border-radius: 100px;
+  padding-left: 6px;
+  padding-right: 20px;
+  width: 100%;
+  height: 20px;
+  font-size: 15px;
+  border: 1px solid #000000;
+}
+div.research button {
+  margin-top: 2px;
+  height: 16px;
+  border: 0px;
+  background-color: #f5eded;
+  position: relative;
+  right: 20px;
+}
+div.research input:focus-visible {
+  border: 1px solid #87d9ff;
+  outline: #000000 1px ;
+}
+
+.snowstorm { grid-area: snowstorm; }
+.shopid { grid-area: shopid; }
+
+
+
+div.navbar {
+  grid-area: navbar;
+  max-height: 100%;
+  max-width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+div.navbar p {
+  text-decoration: none;
+  font-family: 'bebas neue';
+  color: #f5eded;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+div.navbar p:hover {
+  color: #87d9ff;
+}
+
+
+
+div.pagemain {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 1230px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+}
+h1.pagetitle {
+  margin: 90px auto;
+}
+div.keyboard-target-color {
+  display: flex;
+  width: 100%;
+}
+div.keyboard-target-color div.keyB-target {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  flex: 0 0 auto;
+}
+div.keyboard-target-color div.keyB-color {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+#tgl-key-caps {
+  padding: 7px;
+}
+#tgl-key-text {
+  padding: 7px;
+  font-size: 25px;
+  text-align: center;
+}
+
+div.tgl-button {
+  border: 1px solid #9c9797;
+  z-index: 3;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+div.color-option {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+}
+div.tgl-color {
+  height: 30px;
+  width: 30px;
+  max-width: initial;
+  border: 1px solid #d5d5d5;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 920px) {
