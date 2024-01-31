@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <title>Sav</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <form onsubmit="sendEmail(); reset(); return false;">
@@ -50,25 +51,27 @@
           <button type="submit">Envoyer le message</button>
         </div>
       </form>
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
       <script>
-        function sendEmail(){
-          Email.send({
-            Host : "smtp.gmail.com",
-            Username : "snowstormtrouper@gmail.com",
-            Password : "chinchilla@8520",
-            To : 'snowstormtrouper@gmail.com',
-            From : document.getElementById("email").value,
-            Subject : "SAV snowstorm",
-            Body : "Nom: " + document.getElementById("name").value
-                + "<br> Email: " + document.getElementById("Email").value
-                + "<br> Téléphone: " + document.getElementById("phone").value
-                + "<br> Pays: " + document.getElementById("country").value
-                + "<br> Message: " + document.getElementById("message").value
-        }).then(
-          message => alert("Le message a été envoyé avec succès !")
-        );
-        }
+        emailjs.init("cVh0dNVTM-BBsLj6n");  // Remplacez "your_user_id" par votre ID utilisateur Email.js
+
+    function sendEmail() {
+        const templateParams = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            country: document.getElementById("country").value,
+            message: document.getElementById("message").value,
+        };
+
+        emailjs.send("service_287m9vg", "template_15fsafi", templateParams)
+            .then((response) => {
+                console.log("E-mail envoyé avec succès : ", response);
+                alert("Le message a été envoyé avec succès !");
+            }, (error) => {
+                console.error("Erreur lors de l'envoi de l'e-mail : ", error);
+                alert("Erreur lors de l'envoi du message. Veuillez vérifier la console pour plus d'informations.");
+            });
+    }
       </script>
 </body>
 </html>
