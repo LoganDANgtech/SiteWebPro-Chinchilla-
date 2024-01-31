@@ -3,7 +3,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #fef1df;
+  background-color: #000000;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,7 +14,7 @@ body {
 
 form {
   padding: 30px;
-  background-color: white;
+  background-color: #094fAC;
   border-radius: 10px;
 }
 form h1 {
@@ -42,6 +42,7 @@ form .corps-formulaire .gauche .groupe input {
   border: 1px solid #c9c9c9;
   outline-color: #747cdf;
   border-radius: 5px;
+  background-color: #f1f1f1;
 }
 form .corps-formulaire .gauche .groupe i {
   position: absolute; /* positionné par rapport à son parent le plus proche positionné */
