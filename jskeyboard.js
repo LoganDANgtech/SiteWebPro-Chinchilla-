@@ -20,21 +20,26 @@ function ChangeTarget(){
     SwitchCap.classList.toggle('active');
 };
 
-var btnOn = document.querySelector('.tgl-color.active')
+
 
 /*const Beckgroundtouchessss = document.querySelector('g:not(.Web_-_Click_Area) > *')
-const BackgroundtoucheS = document.querySelectorAll('#W-Click_Area path')
+
 console.log(BackgroundtoucheS)
 
-BackgroundtoucheS.forEach(Backgroundtouche => {
-    Backgroundtouche.addEventListener('click', function Changebackground(){
-        console.log("coucou");
-        Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
-    });
-});*/
 
+    
+*/
+const BackgroundtoucheS = document.querySelectorAll('#W-Key_Base path');
 $(document).ready(function(){
-    $('g:not(.Web_-_Click_Area) > *').click(function() {
-        console.log(self)
+    $('g:not(.Web_-_Click_Area) > *').click(function(e) {
+        var loc = e.target.attributes[4].value.slice(0,15)
+        BackgroundtoucheS.forEach(Backgroundtouche => {
+            if (Backgroundtouche.attributes.d.nodeValue.slice(0,15) === loc){
+                var btnOn = document.querySelector('.tgl-color.active')
+                console.log(Backgroundtouche.attributes.fill.nodeValue)
+                Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
+            }
+            
+        });
     });
 });
