@@ -5,10 +5,10 @@
     font-family: 'Open Sans';
 }
 body{
-    background-color: #000000;
+    background-color: #edf4f4;
 }
 a:-webkit-any-link {
-    color: #f5eded;
+    color: #edf4f4;
     text-decoration: none;
 }
 
@@ -45,6 +45,7 @@ header a.logo {
 }
 div.research form {
     display: flex;
+    
 }
 div.research input {
     border-radius: 100px;
@@ -54,12 +55,13 @@ div.research input {
     height: 20px;
     font-size: 15px;
     border: 1px solid #000000;
+    background-color: #edf4f4;
 }
 div.research button {
     margin-top: 2px;
     height: 16px;
     border: 0px;
-    background-color: #f5eded;
+    background-color: #edf4f4;
     position: relative;
     right: 20px;
 }
@@ -86,7 +88,7 @@ div.navbar {
 div.navbar p {
     text-decoration: none;
     font-family: 'bebas neue';
-    color: #f5eded;
+    color: #edf4f4;
     font-size: 20px;
     margin-left: 5px;
     margin-bottom: 2px;
@@ -114,7 +116,7 @@ h1.pagetitle {
 div.keyboard-target-color {
     display: flex;
     width: 100%;
-    background-color: #f5eded;
+    background-color: #edf4f5;
     padding: 0px 20px 20px;
 }
 div.keyboard-target-color div.keyB-target {
@@ -160,4 +162,7 @@ div.tgl-color {
 div.tgl-color.active,#tgl-key-caps.active,#tgl-key-text.active{
     outline: 4px solid #000000;
     z-index: 2;
+}
+div.customizer-keyboard {
+    width: 100%;
 }
