@@ -1,82 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Contact_CSS.css" />
     <title>Contact</title>
-</head>
-<style>
-    body div.cadre{
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    body div.carre{
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .cadre {
-      position: relative;
-      border: 2px solid #000000;
-    }
-    .carre{
-      position: relative;
-      width: 300px;
-      height: 200px;
-      border: 1px solid #000000;
-      background-color: antiquewhite;
-      justify-content: space-between;
-    }
 
-    .image-floue {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: blur(3px); /* Ajustez la valeur de flou selon vos préférences */
-    }
-    .texte-au-dessus,
-    .texte-en-dessous {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translate(-50%, -5%);
-      color: #000000;
-      text-align: center;
-      font-size: 20px;
-    }
-
-    .texte-en-dessous {
-      top: auto;
-      bottom: 10px;
-    }
-    .contenu-cadre {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      color: #ffffff;
-      text-align: center;
-      font-size: 20px;
-      background-color: #1a1a1a91;
-      width: 100%;
-    }
-    .image-conteneur {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  </style>
 </head>
 <body>
-
     <div class="cadre">
         <img src="./images/couverture.jpg" alt="Image de fond" class="image-floue">
         <div class="contenu-cadre">
@@ -88,16 +19,21 @@
             
         </div>
     </div>
+    <div class="tout-carre">
         <div class="carre">
             <div class="image-conteneur"><img src="./images/ico-tel.svg"></div>
             <div class="texte-en-dessous"><strong><br/>+33 9 08 07 06 05 (appel non surtaxé)</strong></div>
             <div class="texte-au-dessus"><strong>TÉLÉPHONE</strong></div>
         </div>
         <div class="carre">
+          <div class="image-conteneur"><img src="./images/ico_maison.png" width="37%"></div>
+          <div class="texte-au-dessus"><strong>ADDRESS</strong></div>
+          <div class="texte-en-dessous"><strong>50 Rue de Marseille, 69007 Lyon</strong></div>
+        </div>
+        <div class="carre">
             <div class="image-conteneur"><img src="./images/ico-mail.svg"></div>
             <div class="texte-au-dessus"><strong>EMAIL</strong></div>
             <div class="texte-en-dessous"><strong>snowstormtrouper@gmail.com</strong></div>
-        </div>
-
+      </div>
 </body>
 </html>
