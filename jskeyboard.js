@@ -21,14 +21,17 @@ keyBSteps.forEach(Step => {
             setTimeout(function() {  
                 Step.innerHTML = "<p>" + text.slice(0,i) + "</p>"
                 i++;
+                if (!(Step.classList.value == 'keyB-step active')){
+                    Step.innerHTML = "<p>" + Step.attributes.step.nodeValue + "</p>"
+                }else{
                 if (i < text.length +1) {
-                writing();        
-                }
+                    writing();
+                
+                }}
             }, 30)
         }
         writing();
         Chosenstep.innerHTML = "<p>" + Chosenstep.attributes.step.nodeValue + "</p>"
-
         if (Step.id === 'step2'){
             document.querySelector('.customizer-keyboard').style.top = '0'
         }else{

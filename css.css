@@ -158,6 +158,10 @@ div.tgl-color {
     z-index: 1;
     transition: outline , 0.1s;
 }
+div.tgl-color:hover,#tgl-key-caps:hover,#tgl-key-text:hover{
+    outline: 1px solid #000000;
+    z-index: 2;
+}
 div.tgl-color.active,#tgl-key-caps.active,#tgl-key-text.active{
     outline: 4px solid #000000;
     z-index: 2;
@@ -166,9 +170,10 @@ div.tgl-color.active,#tgl-key-caps.active,#tgl-key-text.active{
 div.keyB-step-selector {
     position: relative;
     display: flex;
-    width: 90%;
+    width: 55%;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-right: 40%;
 }
 div.keyB-step-selector div.stepline {
     width: 100%;
@@ -183,12 +188,12 @@ div.keyB-step{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 200px;
+    width: 60px;
     height: 50px;
     border: 2px solid #adadad;
     background-color: #ffffff;
     box-shadow: 0 2px 5px -2px rgba(0,0,0,.75);
-    transition: backgroundcolor  0.2s, color  0.5s;
+    transition: backgroundcolor  0.5s, color  0.1s , width 0.5s;
 }
 div.keyB-step:hover{
     background-color: #46c4ff;
@@ -197,6 +202,8 @@ div.keyB-step:hover{
 div.keyB-step.active{
     background-color: #0099e0;
     color: #edf4f4;
+    width: 250px;
+    transition:backgroundcolor  0.5s, color  0.1s , width 0.3s;
 }
 
 div.customizer-keyboard {
