@@ -1,0 +1,38 @@
+body {
+    font-family: 'Open Sans';
+    background-color: #edf4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border: 2px solid #094fac;
+    padding: 20px;
+    background-color: #094fac;
+}
+
+details {
+    margin-bottom: 15px;
+    border: 2px solid #094fac;
+    border-radius: 5px;
+    padding: 25px;
+    background-color: #5684c1;
+    color: #f5eded;
+    font-size: 25px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details[open] {
+    background-color: #5684c1;
+}
