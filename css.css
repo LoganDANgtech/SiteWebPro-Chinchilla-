@@ -154,7 +154,7 @@ div.tgl-color {
     height: 30px;
     width: 30px;
     max-width: initial;
-    border: 1px solid #d5d5d5;
+    border: 1px solid #646464;
     z-index: 1;
     transition: outline , 0.1s;
 }
@@ -169,17 +169,18 @@ div.tgl-color.active,#tgl-key-caps.active,#tgl-key-text.active{
 
 div.keyB-step-selector {
     position: relative;
+    align-self: flex-start;
     display: flex;
     width: 55%;
     justify-content: space-between;
     margin-bottom: 20px;
-    margin-right: 40%;
+    margin-left: 5%;
 }
 div.keyB-step-selector div.stepline {
+    position: absolute;
     width: 100%;
     height: 2px;
-    top: 48%;
-    position: absolute;
+    top: 24px;
     background-color: #adadad;
     z-index: -1;
 }
@@ -208,8 +209,34 @@ div.keyB-step.active{
 
 div.customizer-keyboard {
     width: 100%;
+    z-index: 3;
+}
+div.Switch-case {
+    display:flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    align-self: start;
+}
+div#afterkeyboard {
+    z-index: 3;
+    width: 100%;
     position: relative;
     top: -100px;
-    z-index: 3;
     transition: top 1s;
+}
+div.backplatepick {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+div.radiotxt {
+    display: flex;
+    flex-direction: row;
+}
+.show {
+    display: inline !important;
+}
+.Case {
+    display: none;
 }

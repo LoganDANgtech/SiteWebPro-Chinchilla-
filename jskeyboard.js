@@ -8,6 +8,15 @@ SwitchBtnsOff.forEach(btnoff => {
     });
 });
 
+const backplatepick = document.querySelector('.backplatepick')
+
+backplatepick.addEventListener('click', function Changebackplate(){
+    var radioon = document.querySelector('input[name="radiobackplate"]:checked');
+    var Lastcase = document.querySelector(".Case.show");
+    Lastcase.classList.remove('show');
+    var showcase = document.querySelector('#'+radioon.attributes.d.nodeValue);
+    showcase.classList.add('show')
+})
 var keyBSteps = document.querySelectorAll('.keyB-step')
 
 keyBSteps.forEach(Step => {
@@ -32,11 +41,18 @@ keyBSteps.forEach(Step => {
         }
         writing();
         Chosenstep.innerHTML = "<p>" + Chosenstep.attributes.step.nodeValue + "</p>"
-        if (Step.id === 'step2'){
-            document.querySelector('.customizer-keyboard').style.top = '0'
+
+        if (Step.id === 'step1'){
+            document.querySelector('.Switch-case').style.display = 'inline'
         }else{
-            document.querySelector('.customizer-keyboard').style.top = '-100px'
+            document.querySelector('.Switch-case').style.display = 'none'
         }
+        if (Step.id === 'step2'){
+            document.querySelector('#afterkeyboard').style.top = '0'
+        }else{
+            document.querySelector('#afterkeyboard').style.top = '-100px'
+        }
+        
     })            
 })
 
