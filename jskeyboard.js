@@ -25,7 +25,7 @@ keyBSteps.forEach(Step => {
         Chosenstep.classList.remove('active')
         Step.classList.add('active')
         var text = Step.attributes.steptxt.nodeValue
-        var i = 1;
+        var i = 7;
         function writing() {   
             setTimeout(function() {  
                 Step.innerHTML = "<p>" + text.slice(0,i) + "</p>"
@@ -35,22 +35,20 @@ keyBSteps.forEach(Step => {
                 }else{
                 if (i < text.length +1) {
                     writing();
-                
                 }}
             }, 30)
         }
         writing();
         Chosenstep.innerHTML = "<p>" + Chosenstep.attributes.step.nodeValue + "</p>"
-
         if (Step.id === 'step1'){
             document.querySelector('.Switch-case').style.display = 'inline'
         }else{
             document.querySelector('.Switch-case').style.display = 'none'
         }
         if (Step.id === 'step2'){
-            document.querySelector('#afterkeyboard').style.top = '0'
+            document.querySelector('#keyboardmain').style.top = '0'
         }else{
-            document.querySelector('#afterkeyboard').style.top = '-100px'
+            document.querySelector('#keyboardmain').style.top = '-100px'
         }
         
     })            

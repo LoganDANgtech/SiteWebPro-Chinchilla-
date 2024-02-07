@@ -173,7 +173,7 @@ div.keyB-step-selector {
     display: flex;
     width: 55%;
     justify-content: space-between;
-    margin-bottom: 20px;
+    
     margin-left: 5%;
 }
 div.keyB-step-selector div.stepline {
@@ -184,7 +184,7 @@ div.keyB-step-selector div.stepline {
     background-color: #adadad;
     z-index: -1;
 }
-div.keyB-step{
+div.keyB-step , div#Keybsave{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,15 +193,16 @@ div.keyB-step{
     height: 50px;
     border: 2px solid #adadad;
     background-color: #ffffff;
+    border-radius: 5px;
     box-shadow: 0 2px 5px -2px rgba(0,0,0,.75);
     transition: backgroundcolor  0.5s, color  0.1s , width 0.5s;
 }
-div.keyB-step:hover{
+div.keyB-step:hover , div#Keybsave:hover{
     background-color: #46c4ff;
     color: #edf4f4;
 }
 div.keyB-step.active{
-    background-color: #0099e0;
+    background-color: #0999e0;
     color: #edf4f4;
     width: 250px;
     transition:backgroundcolor  0.5s, color  0.1s , width 0.3s;
@@ -218,7 +219,7 @@ div.Switch-case {
     margin-bottom: 10px;
     align-self: start;
 }
-div#afterkeyboard {
+div#keyboardmain {
     z-index: 3;
     width: 100%;
     position: relative;
@@ -229,6 +230,7 @@ div.backplatepick {
     display:flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 10px;
 }
 div.radiotxt {
     display: flex;
@@ -239,4 +241,40 @@ div.radiotxt {
 }
 .Case {
     display: none;
+}
+input#radiobackplate1{
+    accent-color: #000000;
+}
+input#radiobackplate2{
+    accent-color: #c1c1c1;
+}
+input#radiobackplate3{
+    accent-color: #000000;
+}
+input#radiobackplate4{
+    accent-color: #6e6e6e;
+}
+input#radiobackplate5{
+    accent-color: #adadad;
+}
+select#attributeswitch {
+    font-size: 17px;
+    text-align: center;
+    width: 255px;
+    height: 30px;
+    border: 2px solid #adadad;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px -2px rgba(0,0,0,.75);
+    transition: backgroundcolor  0.5s, color  0.1s , width 0.5s;
+}
+select#attributeswitch:focus-visible {
+    border: 3px solid #094fac;
+}
+div.topkeyboard {
+    display: flex; 
+    width: 100%; 
+    margin-bottom: 20px;
+    justify-content: space-between;
+
 }
