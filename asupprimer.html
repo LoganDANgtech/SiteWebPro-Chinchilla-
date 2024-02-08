@@ -1,0 +1,33 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu déroulant en temps réel</title>
+</head>
+<body>
+
+  <label for="selectMenu">Choisissez une option :</label>
+  <select id="selectMenu">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+
+  <p id="result">Le résultat apparaîtra ici en temps réel.</p>
+
+  <script>
+    // Sélectionnez l'élément de menu déroulant
+    const selectMenu = document.getElementById('selectMenu');
+
+    // Écoutez l'événement de changement
+    selectMenu.addEventListener('change', function() {
+      // Obtenez la valeur sélectionnée
+      const selectedValue = selectMenu.value;
+
+      // Affichez la valeur sélectionnée en temps réel
+      const resultParagraph = document.getElementById('result');
+      resultParagraph.textContent = `Vous avez choisi : ${selectedValue}`;
+    });
+  </script>
+
+</body>
+</html>

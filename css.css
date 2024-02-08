@@ -187,7 +187,7 @@ div.keyB-step-selector div.stepline {
     background-color: #adadad;
     z-index: -1;
 }
-div.keyB-step , div#Keybsave{
+div.keyB-step , div#Keybsave , div#KeyBnextstep{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,7 +200,7 @@ div.keyB-step , div#Keybsave{
     box-shadow: 0 2px 5px -2px rgba(0,0,0,.75);
     transition: backgroundcolor  0.5s, color  0.1s , width 0.5s;
 }
-div.keyB-step:hover , div#Keybsave:hover{
+div.keyB-step:hover , div#Keybsave:hover , div#KeyBnextstep:hover{
     background-color: #46c4ff;
     color: #edf4f4;
 }
@@ -260,7 +260,7 @@ input#radiobackplate4{
 input#radiobackplate5{
     accent-color: #adadad;
 }
-select#attributeswitch {
+select#attributeswitch , select#Alphanumerictxt , select#Modifierstxt , select#OStxt {
     font-size: 17px;
     text-align: center;
     width: 255px;
@@ -298,6 +298,18 @@ div.KeyGrouppos .groupModif:hover{
 }
 div.KeyGrouppos .groupModif img{
     width: 100%;
-}rgb(3, 1, 1)
+}
+div.leftandright {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-
+}
+div#Modifkeystxt{
+    margin-top: 10px;
+    margin-left: 5%;
+    background-color: #ffffff;
+    border: 1px solid #adadad;
+    border-radius: 10px;
+    padding: 10px;
+}

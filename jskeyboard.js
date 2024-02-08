@@ -18,6 +18,47 @@ function ChangeCasecolor(loc){
     }
 };
 
+function Stepmodifs(Step,Chosenstep){
+    var text = Step.attributes.steptxt.nodeValue
+    var i = 7;
+    function writing() {   
+        setTimeout(function() {  
+            Step.innerHTML = "<p>" + text.slice(0,i) + "</p>"
+            i++;
+            if (!(Step.classList.value == 'keyB-step active')){
+                Step.innerHTML = "<p>" + Step.attributes.step.nodeValue + "</p>"
+            }else{
+            if (i < text.length +1) {
+                writing();
+            }}
+        }, 30)
+    }
+    writing();
+    Chosenstep.innerHTML = "<p>" + Chosenstep.attributes.step.nodeValue + "</p>"
+    if (Step.id === 'step1'){
+        document.querySelector('.Switch-case').style.display = 'inline'
+    }else{
+        document.querySelector('.Switch-case').style.display = 'none'
+    }
+    if (Step.id === 'step2'){
+        document.querySelector('#keyboardmain').style.top = '0'
+        document.querySelector('.KeyGroup').classList.add('show')
+    }else{
+        document.querySelector('#keyboardmain').style.top = '-110px'
+        document.querySelector('.KeyGroup').classList.remove('show')
+    }
+    if (Step.id === 'step3'){
+        document.querySelector('#Modifkeystxt').classList.add('show')
+    }else{
+        document.querySelector('#Modifkeystxt').classList.remove('show')
+    }
+    if (Step.id === 'step4'){
+        document.querySelector('#optionscomment').classList.add('show')
+    }else{
+        document.querySelector('#optionscomment').classList.remove('show')
+    }
+}
+
 const Alphamodif = document.querySelector('#Alphamodif')
 const AlphalocS = document.querySelector('#G-Alpha').childNodes
 var pathNodesofAlpha = Array.from(AlphalocS).filter(function(node) {
@@ -66,39 +107,23 @@ keyBSteps.forEach(Step => {
         var Chosenstep = document.querySelector('.keyB-step.active')
         Chosenstep.classList.remove('active')
         Step.classList.add('active')
-        var text = Step.attributes.steptxt.nodeValue
-        var i = 7;
-        function writing() {   
-            setTimeout(function() {  
-                Step.innerHTML = "<p>" + text.slice(0,i) + "</p>"
-                i++;
-                if (!(Step.classList.value == 'keyB-step active')){
-                    Step.innerHTML = "<p>" + Step.attributes.step.nodeValue + "</p>"
-                }else{
-                if (i < text.length +1) {
-                    writing();
-                }}
-            }, 30)
-        }
-        writing();
-        Chosenstep.innerHTML = "<p>" + Chosenstep.attributes.step.nodeValue + "</p>"
-        if (Step.id === 'step1'){
-            document.querySelector('.Switch-case').style.display = 'inline'
-        }else{
-            document.querySelector('.Switch-case').style.display = 'none'
-        }
-        if (Step.id === 'step2'){
-            document.querySelector('#keyboardmain').style.top = '0'
-            document.querySelector('.KeyGroup').classList.add('show')
-        }else{
-            document.querySelector('#keyboardmain').style.top = '-100px'
-            document.querySelector('.KeyGroup').classList.remove('show')
-        }
-        
-    })            
+        Stepmodifs(Step, Chosenstep)
+    })         
 })
 
-
+const Keyboardnextstep = document.querySelector('#KeyBnextstep')
+Keyboardnextstep.addEventListener('click', function Nextstep(){
+    var Chosenstep = document.querySelector('.keyB-step.active')
+    var Stepnb = Chosenstep.attributes.step.nodeValue
+    if (Stepnb < 4){
+        var Nextstepnb = parseInt(Stepnb, 10) + 1
+        console.log(Nextstepnb)
+        Chosenstep.classList.remove('active')
+        var Nextstep = document.querySelector('.keyB-step[step="'+Nextstepnb+'"]')
+        Nextstep.classList.add('active')
+        Stepmodifs(Nextstep, Chosenstep)
+    }
+})
 
 
 const SwitchCap = document.getElementById('tgl-key-caps')
