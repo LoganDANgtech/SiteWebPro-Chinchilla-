@@ -13,6 +13,7 @@ a:-webkit-any-link {
 }
 
 header {
+    z-index: 10;
     position: fixed;
     background-color: black;
     height: 70px;
@@ -280,3 +281,23 @@ div.topkeyboard {
     justify-content: space-between;
 
 }
+/*------------------NEW------------------*/
+div.KeyGrouppos {
+    width:95%;
+    display: flex;
+}
+div.KeyGrouppos .groupModif{
+    width: 20%;
+    padding: 8px;
+    margin: 2px;
+    background-color: #ffffff;
+    border: 1px solid #adadad;
+}
+div.KeyGrouppos .groupModif:hover{
+    border: 3px solid #094fac;
+}
+div.KeyGrouppos .groupModif img{
+    width: 100%;
+}rgb(3, 1, 1)
+
+

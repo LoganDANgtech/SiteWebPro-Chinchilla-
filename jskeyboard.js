@@ -11,7 +11,6 @@ function ChangeCasecolor(loc){
     if (SwitchCap.classList[1] === 'active'){
         BackgroundtoucheS.forEach(Backgroundtouche => {
             if (Backgroundtouche.attributes.d.nodeValue.slice(0,15) === loc){
-                console.log('oiuuiouiouoiuiouiouio')
                 var btnOn = document.querySelector('.tgl-color.active')
                 Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
                 }
@@ -122,3 +121,7 @@ $(document).ready(function(){
         ChangeCasecolor(loc)
     });
 });
+
+
+
+/*------------------NEW------------------*/
