@@ -7,21 +7,46 @@ SwitchBtnsOff.forEach(btnoff => {
     });
 });
 
+function ChangeCasecolor(loc){
+    if (SwitchCap.classList[1] === 'active'){
+        BackgroundtoucheS.forEach(Backgroundtouche => {
+            if (Backgroundtouche.attributes.d.nodeValue.slice(0,15) === loc){
+                console.log('oiuuiouiouoiuiouiouio')
+                var btnOn = document.querySelector('.tgl-color.active')
+                Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
+                }
+        });
+    }
+};
+
 const Alphamodif = document.querySelector('#Alphamodif')
 const AlphalocS = document.querySelector('#G-Alpha').childNodes
-console.log(AlphalocS)
-Alphamodif.addEventListener('click', function Changebygroup(){
-    AlphalocS.forEach(locAlpha => {
-        if (locAlpha == locAlpha){ /*BROOOO CHERCHE VITE SUR LINTERNET*/
-            if (SwitchCap.classList[1] === 'active'){
-                var loc = locAlpha.attributes[4].value
-                BackgroundtoucheS.forEach(Backgroundtouche => {
-                    if (Backgroundtouche.attributes.d.nodeValue === loc){
-                        var btnOn = document.querySelector('.tgl-color.active')
-                        Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
-                    }
-                });
-            }
+var pathNodesofAlpha = Array.from(AlphalocS).filter(function(node) {
+    return node.nodeName.toLowerCase() === 'path';
+});
+Alphamodif.addEventListener('click', function ChangebygroupAlpha(){
+    pathNodesofAlpha.forEach(locAlpha => {
+        var loc = locAlpha.attributes[4].value.slice(0,15)
+        ChangeCasecolor(loc)
+    });
+})
+const Gmodif = document.querySelector('#Gmodif')
+const GlocS = document.querySelector('#G-Mods').childNodes
+var pathNodesofG = Array.from(GlocS).filter(function(node) {
+    return node.nodeName.toLowerCase() === 'path';
+});
+Gmodif.addEventListener('click', function ChangebygroupG(){
+    pathNodesofG.forEach(locG => {
+        var loc = locG.attributes[4].value.slice(0,15)
+        ChangeCasecolor(loc)
+    });
+})
+const Allmodif = document.querySelector('#Allmodif')
+Allmodif.addEventListener('click', function ChangebygroupAll(){
+    BackgroundtoucheS.forEach(Backgroundtouche => {
+        if (SwitchCap.classList[1] === 'active'){
+            var btnOn = document.querySelector('.tgl-color.active')
+            Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
         }
     });
 })
@@ -93,15 +118,7 @@ const BackgroundtoucheS = document.querySelectorAll('#W-Key_Base path');
 $(document).ready(function(){
 
     $('g:not(.Web_-_Click_Area) > *').click(function(e) {
-        if (SwitchCap.classList[1] === 'active'){
-            var loc = e.target.attributes[4].value.slice(0,15)
-            BackgroundtoucheS.forEach(Backgroundtouche => {
-                if (Backgroundtouche.attributes.d.nodeValue.slice(0,15) === loc){
-                    var btnOn = document.querySelector('.tgl-color.active')
-                    Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
-                }
-            });
-        }
-        ;
+        var loc = e.target.attributes[4].value.slice(0,15)
+        ChangeCasecolor(loc)
     });
 });

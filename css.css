@@ -225,7 +225,7 @@ div#keyboardmain {
     z-index: 3;
     width: 100%;
     position: relative;
-    top: -100px;
+    top: -110px;
     transition: top 1s;
 }
 div.backplatepick {
