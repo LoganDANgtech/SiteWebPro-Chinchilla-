@@ -1,5 +1,4 @@
 var SwitchBtnsOff = document.querySelectorAll('.tgl-color')
-
 SwitchBtnsOff.forEach(btnoff => {
     btnoff.addEventListener('click', function ChangeColor(){
         var btnOn = document.querySelector('.tgl-color.active')
@@ -7,6 +6,25 @@ SwitchBtnsOff.forEach(btnoff => {
         btnoff.classList.add('active');
     });
 });
+
+const Alphamodif = document.querySelector('#Alphamodif')
+const AlphalocS = document.querySelector('#G-Alpha').childNodes
+console.log(AlphalocS)
+Alphamodif.addEventListener('click', function Changebygroup(){
+    AlphalocS.forEach(locAlpha => {
+        if (locAlpha == locAlpha){ /*BROOOO CHERCHE VITE SUR LINTERNET*/
+            if (SwitchCap.classList[1] === 'active'){
+                var loc = locAlpha.attributes[4].value
+                BackgroundtoucheS.forEach(Backgroundtouche => {
+                    if (Backgroundtouche.attributes.d.nodeValue === loc){
+                        var btnOn = document.querySelector('.tgl-color.active')
+                        Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
+                    }
+                });
+            }
+        }
+    });
+})
 
 const backplatepick = document.querySelector('.backplatepick')
 
@@ -47,8 +65,10 @@ keyBSteps.forEach(Step => {
         }
         if (Step.id === 'step2'){
             document.querySelector('#keyboardmain').style.top = '0'
+            document.querySelector('.KeyGroup').classList.add('show')
         }else{
             document.querySelector('#keyboardmain').style.top = '-100px'
+            document.querySelector('.KeyGroup').classList.remove('show')
         }
         
     })            
@@ -69,7 +89,9 @@ function ChangeTarget(){
 };
 
 const BackgroundtoucheS = document.querySelectorAll('#W-Key_Base path');
+
 $(document).ready(function(){
+
     $('g:not(.Web_-_Click_Area) > *').click(function(e) {
         if (SwitchCap.classList[1] === 'active'){
             var loc = e.target.attributes[4].value.slice(0,15)
@@ -79,6 +101,7 @@ $(document).ready(function(){
                     Backgroundtouche.attributes.fill.nodeValue = (btnOn.attributes.datahex.nodeValue);
                 }
             });
-        };
+        }
+        ;
     });
 });
