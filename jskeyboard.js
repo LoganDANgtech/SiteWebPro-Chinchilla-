@@ -140,13 +140,37 @@ function ChangeTarget(){
 const BackgroundtoucheS = document.querySelectorAll('#W-Key_Base path');
 
 $(document).ready(function(){
-
     $('g:not(.Web_-_Click_Area) > *').click(function(e) {
         var loc = e.target.attributes[4].value.slice(0,15)
         ChangeCasecolor(loc)
     });
 });
 
-
-
 /*------------------NEW------------------*/
+const Alphanumerictxt = document.getElementById('Alphanumerictxt');
+const AlphanumericS = document.querySelectorAll('g.Alpha');
+const Modifiertxt = document.getElementById('Modifierstxt')
+const ModifierS = document.querySelectorAll('g.Mods')
+const OS_txt = document.getElementById('OStxt')
+const OS_S = document.querySelectorAll('g.OS')
+
+function Changingsvg(selectid,optionS){
+    var selectedValue = selectid.value;
+    var selectedoption = Array.from(optionS).filter(function(node) {
+        return node.classList[1] == selectedValue;
+    });
+    var Lastoption = Array.from(optionS).filter(function(node) {
+        return node.classList[2] == 'show';
+    });
+    selectedoption[0].classList.add('show')
+    Lastoption[0].classList.remove('show') 
+}
+Alphanumerictxt.addEventListener('change', function() {
+    Changingsvg(Alphanumerictxt,AlphanumericS)
+})
+Modifiertxt.addEventListener('change', function() {
+    Changingsvg(Modifiertxt,ModifierS)
+})
+OS_txt.addEventListener('change', function() {
+    Changingsvg(OS_txt,OS_S)
+})
