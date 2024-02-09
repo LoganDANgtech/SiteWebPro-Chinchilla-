@@ -54,6 +54,7 @@ function Stepmodifs(Step,Chosenstep){
     }
     if (Step.id === 'step4'){
         document.querySelector('#optionscomment').classList.add('show')
+        
     }else{
         document.querySelector('#optionscomment').classList.remove('show')
     }
